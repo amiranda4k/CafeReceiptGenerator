@@ -1,4 +1,4 @@
-# Define the prices of coffee and muffin
+# Define the prices of items and the tax rate
 PRICE_OF_COFFEE = 5  # $5 per coffee
 PRICE_OF_MUFFIN = 4  # $4 per muffin
 PRICE_OF_TEA = 3     # $3 per tea
@@ -6,7 +6,7 @@ PRICE_OF_CROISSANT = 5  # $5 per croissant
 TAX_RATE = 0.06      # 6% sales tax
 
 # Function to calculate total cost
-def calculate_total_cost(num_coffees, num_muffins):
+def calculate_total_cost(num_coffees, num_muffins, num_teas, num_croissants):
     total_coffee_cost = num_coffees * PRICE_OF_COFFEE
     total_muffin_cost = num_muffins * PRICE_OF_MUFFIN
     total_tea_cost = num_teas * PRICE_OF_TEA
@@ -17,9 +17,9 @@ def calculate_total_cost(num_coffees, num_muffins):
     return total_coffee_cost, total_muffin_cost, total_tea_cost, total_croissant_cost, tax, total_cost
 
 # Function to display receipt
-def display_receipt(num_coffees, num_muffins, coffee_cost, muffin_cost, tax, total):
+def display_receipt(num_coffees, num_muffins, num_teas, num_croissants, coffee_cost, muffin_cost, tea_cost, croissant_cost, tax, total):
     print("\n***************************************")
-    print("My Coffee and Muffin Shop Receipt")
+    print("My Expanded Coffee Shop Receipt")
     print(f"{num_coffees} Coffee at ${PRICE_OF_COFFEE} each: ${coffee_cost:.2f}")
     print(f"{num_muffins} Muffins at ${PRICE_OF_MUFFIN} each: ${muffin_cost:.2f}")
     print(f"{num_teas} Tea at ${PRICE_OF_TEA} each: ${tea_cost:.2f}")
@@ -29,9 +29,10 @@ def display_receipt(num_coffees, num_muffins, coffee_cost, muffin_cost, tax, tot
     print(f"Total: ${total:.2f}")
     print("Thank you for visiting! We hope to see you again soon.")
     print("***************************************")
+
 # Main function to run the program
 def main():
-    # Ask the user for the number of coffees and muffins
+    # Ask the user for the number of each item
     num_coffees = int(input("Number of coffees bought? "))
     num_muffins = int(input("Number of muffins bought? "))
     num_teas = int(input("Number of teas bought? "))
